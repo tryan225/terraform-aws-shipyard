@@ -19,7 +19,7 @@ resource "aws_instance" "lab_server" {
   user_data                   = <<EOF
     #! /bin/bash
     sudo curl https://shipyard.run/install | bash
-    shipyard run github.com/shipyard-run/blueprints//consul-docker
+    shipyard run ${var.blueprint_repo}
   EOF
 }
 
