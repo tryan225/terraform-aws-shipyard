@@ -8,13 +8,13 @@ data "aws_vpc" "default" {
 }
 
 resource "aws_instance" "lab_server" {
-  ami                         = "ami-0122f91fd9e5c346a"
-  instance_type               = "t2.medium"
-  key_name                    = "tyler-us-east-1"
+  ami                         = "${var.ami_id}"
+  instance_type               = "${var.instance_type}" 
+  key_name                    = "${var.key_name}"
   vpc_security_group_ids      = [aws_security_group.allow_http_docs_site.id]
   associate_public_ip_address = true
   tags                        = {
-    Name = "support-lab-test"
+    Name = "${var.lab_name}"
   } 
   user_data                   = <<EOF
     #! /bin/bash
