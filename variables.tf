@@ -1,7 +1,13 @@
+variable "aws_region" {
+  description = "AWS region to deploy your ec2 instance"
+  type        = string
+  default     = "us-east-1"
+}
+
 variable "ami_id" {
   description = "ami-id for your packer image"
   type        = string
-  default     = "ami-0122f91fd9e5c346a"
+  default     = "ami id here"
 }
 
 variable "lab_name" {
@@ -13,13 +19,13 @@ variable "lab_name" {
 variable "key_name" {
   description = "EC2 ssh keypair for your lab"
   type        = string
-  default     = "tyler-us-east-1"
+  default     = "ec2 keypair name here"
 }
 
 variable "blueprint_repo" {
   description = "location of the github repo for your desired shipyard blueprint"
   type        = string
-  default     = "github.com/shipyard-run/blueprints//consul-docker"
+  default     = "github.com/shipyard-run/blueprints//vault-k8s"
 }
 
 variable "instance_type" {

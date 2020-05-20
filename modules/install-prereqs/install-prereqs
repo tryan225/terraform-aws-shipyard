@@ -6,4 +6,12 @@ sudo amazon-linux-extras install docker -y
 sudo usermod -a -G docker ec2-user
 echo $?
 sudo systemctl enable docker
+sudo curl -sfL https://get.k3s.io | sh -
+sudo curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+sudo curl -O https://releases.hashicorp.com/nomad/0.11.2/nomad_0.11.2_linux_amd64.zip
+sudo unzip nomad_0.11.2_linux_amd64.zip
+sudo mv nomad /usr/local/bin/
+echo $?
+sudo rm nomad_0.11.2_linux_amd64.zip
+echo $?
 
