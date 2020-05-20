@@ -28,9 +28,10 @@ When the build finishes, it will output the IDs of the new AMIs. Then, reference
 
 ### To run your Shipyard EC2 instance:
 
-1. Configure all of the variables in `variables.tf` to your liking, using the AMI ID from the packer build for `ami_id`.
-2. Run `terraform plan` and verify the resources you wish to be deployed look right
-3. Run `terraform apply` and follow the prompts.
+1. Run `terraform init`
+2. Configure all of the variables in `variables.tf` to your liking, using the AMI ID from the packer build for `ami_id`.
+3. Run `terraform plan` and verify the resources you wish to be deployed look right
+4. Run `terraform apply` and follow the prompts.
 
 You will need to get the public IP for your EC2 instance after it is deployed if you wish to visit the docusaurus page deployed by Shipyard at `http://<ip of your ec2 instance>:18080`
 

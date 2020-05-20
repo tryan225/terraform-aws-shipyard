@@ -1,6 +1,5 @@
 provider "aws" {
   profile    = "default"
-  region     = "$aws_region"
 }
 
 data "aws_vpc" "default" {
