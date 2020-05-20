@@ -6,7 +6,7 @@ data "aws_vpc" "default" {
   default = true
 }
 
-resource "aws_instance" "lab_server" {
+resource "aws_instance" "shipyard_server" {
   ami                         = "${var.ami_id}"
   instance_type               = "${var.instance_type}" 
   key_name                    = "${var.key_name}"
@@ -20,6 +20,14 @@ resource "aws_instance" "lab_server" {
     sudo curl https://shipyard.run/install | bash
     shipyard run ${var.blueprint_repo}
   EOF
+}
+
+output "public_instance_ip_addr" {
+  value = aws_instance.shipyard_server.public_ip
+}
+
+output "private_instance_ip_addr" {
+  value = aws_instance.shipyard_server.private_ip
 }
 
 resource "aws_security_group" "allow_http_docs_site" {

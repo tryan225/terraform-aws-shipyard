@@ -3,11 +3,11 @@
 ## What is this? 
 This is a terraform module to deploy an EC2 instance that has the following prerequisites for [Shipyard](https://shipyard.run):
 
-1. Docker
-2. Git
-3. K3s
-4. Helm
-5. Nomad
+1. [Docker](https://www.docker.com/)
+2. [Git](https://git-scm.com/)
+3. [K3s](https://k3s.io/)
+4. [Helm](https://helm.sh/)
+5. [Nomad](https://www.nomadproject.io/)
 
 The module also has a variable for `$blueprint_repo` in `./variables.tf` that, if pointing at a valid Shipyard blueprint, that blueprint will be automatically deployed on `terraform apply`.
 
