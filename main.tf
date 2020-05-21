@@ -31,7 +31,6 @@ output "private_instance_ip_addr" {
 }
 
 resource "aws_security_group" "allow_http_docs_site" {
-  name        = "allow_http_docs_site"
   description = "Allow http over 18080"
   vpc_id      = data.aws_vpc.default.id
 
